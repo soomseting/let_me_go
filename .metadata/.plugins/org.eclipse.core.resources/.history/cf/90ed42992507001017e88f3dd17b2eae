@@ -1,0 +1,66 @@
+<%@ page contentType="text/html; charset=UTF-8" pageEncoding="UTF-8" %>
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="../../css/sign_up.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="js/jquery-3.7.1.js"></script>
+    <script src="js/script.js"></script>
+</head>
+
+<body>
+    <section>
+        <div class="sign_up_logo">
+            <img src="img/logo.png" alt="logo">
+        </div>
+        <div class="sign_up_content">
+            <div class="su_title">
+                <h1>íìê°ì</h1>
+            </div>
+            <div class="su_con_wrap">
+                <div class="su_con_box">
+                    <div class="su_ct">ì´ë¦<span> *</span></div>
+                    <div class="su_input"><input type="text" placeholder="ì´ë¦ì ìë ¥í´ ì£¼ì¸ì."></div>
+                </div>
+                <div class="su_con_box su_con_two">
+                    <div class="su_ct">ì´ë©ì¼<span> *</span></div>
+                    <div class="su_input"><input type="text" placeholder="ì´ë©ì¼ì ìë ¥í´ ì£¼ì¸ì."></div>
+                </div>
+                <div class="su_con_box">
+                    <div class="su_ct">ë¹ë°ë²í¸<span> *</span></div>
+                    <div class="su_input"><input type="password" placeholder="ë¹ë°ë²í¸ë¥¼ ìë ¥í´ ì£¼ì¸ì. (8ìë¦¬ ì´ì)"></div>
+                    <div class="su_input"><input type="password" placeholder="ë¹ë°ë²í¸ë¥¼ íë² ë ìë ¥í´ì£¼ì¸ì."></div>
+                </div>
+                <div class="su_con_box su_con_one">
+                    <div class="su_ct">ì°ë½ì²<span> *</span></div>
+                    <div class="su_input"><input type="text" placeholder="ì°ë½ì²ë¥¼ ìë ¥í´ ì£¼ì¸ì."></div>
+                </div>
+                <div class="su_con_box su_con_thr">
+                    <div class="su_ct">ì£¼ì<span> *</span></div>
+                    <div class="su_input"><input type="text" placeholder="ì£¼ìë¥¼ ìë ¥í´ ì£¼ì¸ì."></div>
+                </div>
+                <div class="su_con_box su_con_thr">
+                    <div class="su_ct">íì ì í<span> *</span></div>
+                    <div class="su_input su_ck">
+                        <div class="su_flex">
+                            <input type="checkbox" name="user_category"><span>êµ¬ë§¤ì</span>
+                        </div>
+                        <div class="su_flex">
+                            <input type="checkbox" name="user_category"><span>íë§¤ì</span>
+                        </div class="su_flex">
+                    </div>
+                </div>
+                <div class="su_con_box su_con_for">
+                    <span id="sign_up_agree">íì ê°ìì ìë£íë©´ ìëì¼ë¡ ì´ì©ì½ê´ê³¼ ê°ì¸ì ë³´ì²ë¦¬ë°©ì¹¨ì ëìë©ëë¤.</span>
+                    <div class="su_input"><input type="submit" value="ê°ìíê¸°"></div>
+                </div>
+            </div>
+        </div>
+    </section>
+</body>
+
+</html>

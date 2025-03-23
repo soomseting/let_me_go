@@ -1,0 +1,171 @@
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+	pageEncoding="UTF-8"%>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>LINKER</title>
+    <link rel="stylesheet" href="css/common.css">
+    <link rel="stylesheet" href="css/product_list.css">
+    
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="js/jquery-3.7.1.js"></script>
+    <script src="js/script.js"></script>
+</head>
+<body>
+   <%@ include file="../../include/header.jsp" %>
+   <%@ include file="../../include/popup.jsp" %>
+    <section>
+        <div class="section_top">
+             <div class="product_banner">
+                <img src="img/product_banner.jpg" alt="product_banner">
+             </div>
+             <div class="product_wrap">
+                <div class="pro_area">
+                    <div class="product_box">
+                        <div class="product_img">
+                            <a href="#"><img src="img/wood1.jpg" alt="keyring"></a>
+                        </div>
+                        <div class="product_state">
+                            <div class="product_title">
+                                <strong>ìì í í¤ë§</strong>
+                                <p>1,200ìë ë¶í°~</p>
+                            </div>
+                            <div class="product_content">
+                                <p>ìë ì¹¼ì  ê¸°ë¥ì¼ë¡ ì´ë¯¸ì§ ì¸ê³½ì ëë¡ ì ìí  ì ìì´ì</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="product_box">
+                        <div class="product_img test">
+                            <img src="img/wood2.png" alt="keyring">
+                        </div>
+                        <div class="product_state">
+                            <div class="product_title">
+                                <strong>ìì í í¤ë§</strong>
+                                <p>1,200ìë ë¶í°~</p>
+                            </div>
+                            <div class="product_content">
+                                <p>ìë ì¹¼ì  ê¸°ë¥ì¼ë¡ ì´ë¯¸ì§ ì¸ê³½ì ëë¡ ì ìí  ì ìì´ì</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="product_box">
+                        <div class="product_img">
+                            <img src="img/wood3.jpg" alt="keyring">
+                        </div>
+                        <div class="product_state">
+                            <div class="product_title">
+                                <strong>ìì í í¤ë§</strong>
+                                <p>1,200ìë ë¶í°~</p>
+                            </div>
+                            <div class="product_content">
+                                <p>ìë ì¹¼ì  ê¸°ë¥ì¼ë¡ ì´ë¯¸ì§ ì¸ê³½ì ëë¡ ì ìí  ì ìì´ì</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="product_box">
+                        <div class="product_img">
+                            <img src="img/wood4.jpg" alt="keyring">
+                        </div>
+                        <div class="product_state">
+                            <div class="product_title">
+                                <strong>ìì í í¤ë§</strong>
+                                <p>1,200ìë ë¶í°~</p>
+                            </div>
+                            <div class="product_content">
+                                <p>ìë ì¹¼ì  ê¸°ë¥ì¼ë¡ ì´ë¯¸ì§ ì¸ê³½ì ëë¡ ì ìí  ì ìì´ì</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="pro_area">
+                    <div class="product_box">
+                        <div class="product_img">
+                            <img src="img/wood5.jpg" alt="keyring">
+                        </div>
+                        <div class="product_state">
+                            <div class="product_title">
+                                <strong>ìì í í¤ë§</strong>
+                                <p>1,200ìë ë¶í°~</p>
+                            </div>
+                            <div class="product_content">
+                                <p>ìë ì¹¼ì  ê¸°ë¥ì¼ë¡ ì´ë¯¸ì§ ì¸ê³½ì ëë¡ ì ìí  ì ìì´ì</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="product_box">
+                        <div class="product_img">
+                            <img src="img/wood11.jpg" alt="keyring">
+                        </div>
+                        <div class="product_state">
+                            <div class="product_title">
+                                <strong>ìì í í¤ë§</strong>
+                                <p>1,200ìë ë¶í°~</p>
+                            </div>
+                            <div class="product_content">
+                                <p>ìë ì¹¼ì  ê¸°ë¥ì¼ë¡ ì´ë¯¸ì§ ì¸ê³½ì ëë¡ ì ìí  ì ìì´ì</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="product_box">
+                        <div class="product_img">
+                            <img src="img/wood12.jpg" alt="keyring">
+                        </div>
+                        <div class="product_state">
+                            <div class="product_title">
+                                <strong>ìì í í¤ë§</strong>
+                                <p>1,200ìë ë¶í°~</p>
+                            </div>
+                            <div class="product_content">
+                                <p>ìë ì¹¼ì  ê¸°ë¥ì¼ë¡ ì´ë¯¸ì§ ì¸ê³½ì ëë¡ ì ìí  ì ìì´ì</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="product_box">
+                        <div class="product_img">
+                            <img src="img/wood13.jpg" alt="keyring">
+                        </div>
+                        <div class="product_state">
+                            <div class="product_title">
+                                <strong>ìì í í¤ë§</strong>
+                                <p>1,200ìë ë¶í°~</p>
+                            </div>
+                            <div class="product_content">
+                                <p>ìë ì¹¼ì  ê¸°ë¥ì¼ë¡ ì´ë¯¸ì§ ì¸ê³½ì ëë¡ ì ìí  ì ìì´ì</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+             </div>
+        </div>
+    </section>
+    <footer>
+        <footer class="footer">
+            <div class="footer_box">
+                <ul class="footer_menu">
+                    <li><a href="#">ì´ì©íê¸°</a></li>
+                    <li><a href="#">ë§ì´íì´ì§</a></li>
+                    <li><a href="#">ì´ì©ì½ê´</a></li>
+                    <li><a href="#">ê°ì¸ì ë³´ì²ë¦¬ë°©ì¹¨</a></li>
+                </ul>
+    
+                <div class="line">
+                    <div class="line_top">
+                        <p class="line_top_p">(ì£¼)ë§ì»¤ | ìì¸ì ê°ë¨êµ¬ | ë¯¸ëíì  : ë§ì»¤ | ê°ì¸ì ë³´ê´ë¦¬ì±ìì : ìì¢ì | ì¬ììë±ë¡ë²í¸ : 123-45-67890</p>
+                        <p class="line_top_p">  : 2025-ìì¸ê°ë¨-1234 | ì ë£ì§ììê°ì¬ìë±ë¡ë² í¸ : ì 2025-1234567-89-0-12345í¸ | ê³ ê°ì¼í° : 1234-5678 | í¸ì¤í ì¬ìì: Amazon Web Service(AWS)</p>
+                    </div>
+                    <div class="line_bottom">
+                        <p class="line_bottom_p">(ì£¼)ë§ì»¤ë íµì íë§¤ì¤ê°ìì´ë©°, íµì íë§¤ì ë¹ì¬ìê° ìëëë¤. ìí, ìíì ë³´, ê±°ëì ê´í ìë¬´ì ì±ìì íë§¤íììê² ììµëë¤.</p>
+                        <p class="line_bottom_p">(ì£¼)ë§ì»¤ ì¬ì´í¸ì ìí/ì ë¬¸ê°/ì´ë²¤í¸ ì ë³´, ëìì¸ ë° íë©´ì êµ¬ì±, UI ë±ì ë¬´ë¨ë³µì , ë°°í¬, ë°©ì¡ ëë ì ì¡, ì¤í¬ëí ë±ì íìë ì ìê¶ë², ì½íì¸ ì°ì ì§í¥ë² ë± ê´ë ¨ë²ë ¹ì ìíì¬ ìê²©í ê¸ì§ë©ëë¤.</p>
+                        <p class="line_bottom_p">Copyright Â© 2025 Jongsu Macne. All rights reserved.</p>
+                    </div>
+                </div>
+                
+                
+            </div>
+        </footer>
+</body>
+</html>

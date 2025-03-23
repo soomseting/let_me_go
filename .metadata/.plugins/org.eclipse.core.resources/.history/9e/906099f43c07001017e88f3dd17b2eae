@@ -1,0 +1,79 @@
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+	pageEncoding="UTF-8"%>
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>ìì£¼íë ì§ë¬¸</title>
+  <link rel="stylesheet" href="../../css/faq.css">
+  <link rel="stylesheet" href="../../css/common.css">
+  <link rel="stylesheet" href="../../css/writeBtn.css">
+  <link rel="stylesheet" href="../../css/sidebar.css">
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="../../js/jquery-3.7.1.js"></script>
+    <script src="../../js/script.js"></script>
+    <script src="../../js/faq.js"></script>
+
+</head>
+<body>
+  <%@ include file="../../include/header.jsp" %>
+  <section>
+    <div class="side_inner_body">
+        <div class="side_bar">
+            <ul>
+                <li><strong>ê³ ê°ì¼í°</strong></li>
+                <li><a href="#">FAQ</a></li>
+                <li><a href="#">1:1 ë¬¸ì</a></li>
+            </ul>
+        </div>
+    </div>
+  <div class="faq-container">
+    <h3>ìì£¼íë ì§ë¬¸ (FAQ)</h3>
+    
+    <div class="faq-section">
+      <ul>
+        <li>
+          <button class="faq-question">í¤ë§ ì£¼ë¬¸ì ì´ë»ê² íëì?
+            <span class="faq-date">2025-03-18</span>
+          </button>
+          <p class="faq-answer">ìíì ì ííê³ , ëìì¸ ìµìì ì íí í, ì¥ë°êµ¬ëì ë´ê³  ê²°ì ë¥¼ ìë£íë©´ ì£¼ë¬¸ì´ ìë£ë©ëë¤.</p>
+        </li>
+        <li>
+          <button class="faq-question">ë§ì¶¤í ëìì¸ë ê°ë¥íê°ì?
+            <span class="faq-date">2025-03-18</span>
+          </button>
+          <p class="faq-answer">ë¤, ê³ ê°ëì´ ìíë ëìì¸ì ìë¡ëíì¬ ë§ì¶¤í í¤ë§ì ì ìí  ì ììµëë¤.</p>
+        </li>
+        <li>
+            <button class="faq-question">ë°°ì¡ì ì¼ë§ë ê±¸ë¦¬ëì?
+                <span class="faq-date">2025-03-18</span>
+            </button>
+            <p class="faq-answer">ì¼ë°ì ì¼ë¡ ì ì í 3~5ì¼ ì´ë´ì ë°°ì¡ë©ëë¤. ë¨, ë§ì¶¤í ëìì¸ì ê²½ì° ì ì ìê°ì´ ë ê±¸ë¦´ ì ììµëë¤.</p>
+        </li>
+        <li>
+            <button class="faq-question">í¤ë§ì´ ììëìì´ì, ì´ë»ê² í´ì¼ íëì?
+                <span class="faq-date">2025-03-18</span>
+            </button>
+            <p class="faq-answer">ìíì ìë ¹íì  í 7ì¼ ì´ë´ì êµí ìì²­ì í´ì£¼ìë©´, ìíë¥¼ íì¸ í êµíì´ ê°ë¥í©ëë¤.</p>
+        </li>
+        <li>
+            <button class="faq-question">ëìì¸ì´ ë§ìì ë¤ì§ ìì¼ë©´ íë¶ ê°ë¥íê°ì?
+                <span class="faq-date">2025-03-18</span>
+            </button>
+            <p class="faq-answer">ë§ì¶¤í ì íì ì£¼ë¬¸ í ì ìëê¸° ëë¬¸ì íë¶ì´ ì´ë ¤ì´ ì  ìí´ ë¶íëë¦½ëë¤. ë¤ë§, ë¶ëíì êµí ê°ë¥í©ëë¤.</p>
+        </li>
+        <li>
+            <button class="faq-question">ëë§¤ ì£¼ë¬¸ë ê°ë¥íê°ì?
+                <span class="faq-date">2025-03-18</span>
+            </button>
+            <p class="faq-answer">ë¤, ëë ì£¼ë¬¸ì ëí´ìë í ì¸ ííì´ ì ê³µë©ëë¤. ë¬¸ìíê¸° íì´ì§ë¥¼ íµí´ ìì¸í ì¬í­ì íì¸í´ì£¼ì¸ì.</p>
+        </li>
+      </ul>
+    </div>
+  </div>
+</section>
+<%@ include file="../../include/footer.jsp" %>
+</body>
+</html>

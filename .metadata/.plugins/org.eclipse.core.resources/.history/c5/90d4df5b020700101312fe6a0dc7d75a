@@ -1,0 +1,89 @@
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+    pageEncoding="UTF-8"%>
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>장바구니</title>
+    <link rel="stylesheet" href="${pageContext.request.contextPath}/css/common.css">
+    <link rel="stylesheet" href="${pageContext.request.contextPath}/css/cart.css">
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="${pageContext.request.contextPath}/js/jquery-3.7.1.js"></script>
+    <script src="${pageContext.request.contextPath}/js/script.js"></script>
+    <script src="${pageContext.request.contextPath}/js/cart.js"></script>
+</head>
+<body>
+    <div id="pop">
+        <div id="pop_box">
+            <div class="pop_content">
+                <div class="popup_logo">
+                    <button id="close"><img src="img/close_icon.png" alt="close_icon"></button>
+                    <img src="img/logo.png" alt="logo">
+                </div>
+                <div class="pop_sec">
+                    <span class="pop_one pop_user"><input type="text" placeholder="이메일을 입력하세요"></span>
+                    <span class="pop_one pop_user"><input type="password" placeholder="비밀번호를 입력하세요"></span>
+                    <div class="pop_sub_flex_box">
+                        <input type="checkbox"><strong id="check_span">이메일 저장</strong>
+                    </div>
+                    <span class="pop_one pop_sign_in"><input type="submit" value="로그인"></span>
+                </div>
+                <div class="pop_sec_footer">
+                    <button class="pop_user"><strong><a class="su2" href="sign_up.html">회원가입</a></strong></button>
+                    <button class="pop_user"><strong>비밀번호 찾기</strong></button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <%@ include file="../../include/header.jsp" %>
+    <section class="sec_area">
+    <div class="cart-container">
+        <div class="cart-title">
+            <h2>장바구니</h2>
+            <div class="progress-bar">
+                <span class="active">1. 장바구니 </span> 
+                <span>> 2. 주문서작성  ></span> 
+                <span>3. 주문완료  </span>
+            </div>
+        </div>
+        
+        <div id="empty-cart" class="cart-empty">
+            <img src="img/cart-icon.png" alt="빈 장바구니">
+            <p>장바구니가 비어 있습니다.</p>
+            <button class="add-item-btn" onclick="goToMainPage()">상품 추가</button>
+        </div>
+        
+        <div id="filled-cart" class="cart-filled hidden">
+            <table class="cart-list">
+                <tr>
+                    <th><input type="checkbox" id="selectAll" onclick="toggleSelectAll()"> 상품</th>
+                    <th>수량</th>
+                    <th>가격</th>
+                    <th>비고</th>
+                </tr>
+                <tr class="cart-item">
+                    <td><input type="checkbox" class="item-check" onclick="updateTotal()"> 상품명</td>
+                    <td>100</td>
+                    <td class="item-price">150,000원</td>
+                    <td><button class="delete-btn" onclick="deleteItem(this)">삭제</button></td>
+                </tr>
+                <tr class="cart-item">
+                    <td><input type="checkbox" class="item-check" onclick="updateTotal()"> 오둥이키링</td>
+                    <td>2</td>
+                    <td class="item-price">3,000원</td>
+                    <td><button class="delete-btn" onclick="deleteItem(this)">삭제</button></td>
+                </tr>
+            </table>
+            
+            <div class="cart-footer">
+                <span class="total-price">총액 : <b id="total-price">0원</b></span>
+                <button class="order-btn" disabled>주문하기</button>
+            </div>
+        </div>
+    </div>
+</section>
+<%@ include file="../../include/footer.jsp" %>
+</body>
+</html>

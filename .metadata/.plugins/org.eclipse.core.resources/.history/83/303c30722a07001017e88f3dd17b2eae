@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" 
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<!-- 안에 들어가는 내용물은 mapper 태그 안에 작성 -->
+<!-- namespace에는 구현 인터페이스의 풀패키지명을 포함한 이름이 들어감 -->
+<mapper namespace="com.webapp.order.model.OrderMapper">
+	<select id="login" parameterType="com.LINKER.users.model.OrderDTO" resultType="int">
+		<!-- SELECT COUNT(*) FROM USERS
+		WHERE EMAIL=#{email} AND PASSWORD=#{password} -->
+		
+		
+		
+	</select>
+</mapper>

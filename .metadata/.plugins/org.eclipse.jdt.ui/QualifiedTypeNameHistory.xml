@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<qualifiedTypeNameHistroy>
+    <fullyQualifiedTypeName name="com.LINKER.users.model.UsersDTO"/>
+    <fullyQualifiedTypeName name="com.LINKER.mapper.UsersMapper"/>
+    <fullyQualifiedTypeName name="com.LINKER.util.mybatis.MybatisUtil"/>
+    <fullyQualifiedTypeName name="javax.servlet.http.HttpSession"/>
+    <fullyQualifiedTypeName name="com.LINKER.order.service.OrderService"/>
+    <fullyQualifiedTypeName name="com.LINKER.order.service.OrderServiceImpl"/>
+    <fullyQualifiedTypeName name="javax.servlet.ServletException"/>
+    <fullyQualifiedTypeName name="java.io.IOException"/>
+</qualifiedTypeNameHistroy>

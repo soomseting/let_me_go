@@ -1,0 +1,8 @@
+INDEX VERSION 1.4+C:\Users\domai\Desktop\let_me_go\.metadata\.plugins\org.eclipse.wst.jsdt.core\indexes
+588236846.index
+4124572593.index
+2304451792.index
+566001886.index
+4133495309.index
+4179009899.index
+2541106594.index

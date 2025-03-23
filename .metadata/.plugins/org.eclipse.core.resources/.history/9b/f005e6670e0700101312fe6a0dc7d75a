@@ -1,0 +1,5 @@
+package com.LINKER.mapper;
+
+public interface UsersMapper {
+
+}

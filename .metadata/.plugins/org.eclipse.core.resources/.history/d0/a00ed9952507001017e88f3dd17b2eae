@@ -1,0 +1,236 @@
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+    pageEncoding="UTF-8"%>
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>LINKER</title>
+    <link rel="stylesheet" href="${pageContext.request.contextPath}/css/common.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="${pageContext.request.contextPath}/js/script.js"></script>
+</head>
+
+<body>
+    <div class="wrap">
+    
+        <div id="pop">
+            <div id="pop_box">
+                <div class="pop_content">
+                    <div class="popup_logo">
+                        <button id="close"><img src="../../img/close_icon.png" alt="close_icon"></button>
+                        <img src="../../img/logo.png" alt="logo">
+                    </div>
+                <form action="/LINKER/jsp/main/main.jsp.users">
+                    <div class="pop_sec">
+                        <span class="pop_one pop_user"><input type="text" name="email" placeholder="이메일을 입력하세요"></span>
+                        <span class="pop_one pop_user"><input type="password" name="password" placeholder="비밀번호를 입력하세요"></span>
+                        <div class="pop_sub_flex_box">
+                            <input type="checkbox"><strong id="check_span">이메일 저장</strong>
+                        </div>
+                        <span class="pop_one pop_sign_in"><input type="submit" value="로그인"></span>
+                    </div>
+                    <div class="pop_sec_footer">
+                        <button class="pop_user"><strong><a class="su2" href="../../sign_up.html">회원가입</a></strong></button>
+                        <button class="pop_user"><strong>비밀번호 찾기</strong></button>
+                    </div>                    
+        		</form>
+                </div>
+            </div>
+        </div>
+        <%@ include file="../../include/header.jsp" %>
+        <section>
+            <div id="slide">
+                <div></div>
+                <div></div>
+                <div></div>
+            </div>
+            <div class="section_banner">
+                <div class="left_banner">
+                    <img src="../../img/section_banner_first_title.png" alt="">
+                    <div class="left_banner_word">
+                        <strong>당신만을 위한 키링을</strong>
+                        <strong>지금 여기서 만나보세요</strong>
+                    </div>
+                    <input type="button" value="링커 시작하기">
+                </div>
+                <div class="right_banner">
+                    <img src="../../img/section_banner.png" alt="">
+                </div>
+            </div>
+            <div class="section_category">
+                <div class="category_title">
+                    <strong>제작 가능한 굿즈 종류</strong>
+                </div>
+                <div class="category_wrap">
+                    <div class="category_box">
+                        <ul class="cg_ic">
+                            <li class="cg_ic1 cg_ct"><a href="#"><img src="../../img/category_ic1.png" alt="category_icon"></a></li>
+                            <li class="cg_ic2 cg_ct"><a href="#"><img src="../../img/category_ic2.png" alt="category_icon"></a></li>
+                            <li class="cg_ic3 cg_ct"><a href="#"><img src="../../img/category_ic3.png" alt="category_icon"></a></li>
+                            <li class="cg_ic4 cg_ct"><a href="#"><img src="../../img/category_ic4.png" alt="category_icon"></a></li>
+                        </ul>
+                        <ul class="cg_name">
+                            <li><a href="#">텀블러</a></li>
+                            <li><a href="#"> 키링</a></li>
+                            <li><a href="#">슬로건</a></li>
+                            <li><a href="#">기타 굿즈</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <div class="category_week_item">
+                <div class="week_title">
+                    <strong>이번 주 Best Item</strong>
+                </div>
+                <div class="week_item_wrap">
+                    <div class="item_line">
+                        <div class="item_box">
+                            <div class="item_area">
+                                <div class="item_image">
+                                    <img src="../../img/odung.png" alt="week_item">
+                                </div>
+                                <div class="item_bucket">
+                                    <img src="../../img/go_bucket_icon.png" alt="go_to_bucket">
+                                </div>
+                            </div>
+                            <div class="word_area">
+                                <p>오둥이 아크릴 키링 1매</p>
+                                <div class="word_area_pr">
+                                    <strong>10,000</strong><span>원</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="item_box">
+                            <div class="item_area">
+                                <div class="item_image">
+                                    <img src="../../img/odung.png" alt="week_item">
+                                </div>
+                                <div class="item_bucket">
+                                    <img src="../../img/go_bucket_icon.png" alt="go_to_bucket">
+                                </div>
+                            </div>
+                            <div class="word_area">
+                                <p>오둥이 아크릴 키링 1매</p>
+                                <div class="word_area_pr">
+                                    <strong>10,000</strong><span>원</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="item_box">
+                            <div class="item_area">
+                                <div class="item_image">
+                                    <img src="../../img/odung.png" alt="week_item">
+                                </div>
+                                <div class="item_bucket">
+                                    <img src="../../img/go_bucket_icon.png" alt="go_to_bucket">
+                                </div>
+                            </div>
+                            <div class="word_area">
+                                <a href="../../product_detail.html">
+                                    <p>오둥이 아크릴 키링 1매</p>
+                                    <div class="word_area_pr">
+                                        <strong>10,000</strong><span>원</span>
+                                    </div>
+                                </a>
+                            </div>
+                        </div>
+                        <div class="item_box">
+                            <div class="item_area">
+                                <div class="item_image">
+                                    <img src="../../img/odung.png" alt="week_item">
+                                </div>
+                                <div class="item_bucket">
+                                    <img src="../../img/go_bucket_icon.png" alt="go_to_bucket">
+                                </div>
+                            </div>
+                            <div class="word_area">
+                                <p>오둥이 아크릴 키링 1매</p>
+                                <div class="word_area_pr">
+                                    <strong>10,000</strong><span>원</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="item_line">
+                        <div class="item_box">
+                            <div class="item_area">
+                                <div class="item_image">
+                                    <img src="../../img/odung.png" alt="week_item">
+                                </div>
+                                <div class="item_bucket">
+                                    <img src="../../img/go_bucket_icon.png" alt="go_to_bucket">
+                                </div>
+                            </div>
+                            <div class="word_area">
+                                <p>오둥이 아크릴 키링 1매</p>
+                                <div class="word_area_pr">
+                                    <strong>10,000</strong><span>원</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="item_box">
+                            <div class="item_area">
+                                <div class="item_image">
+                                    <img src="../../img/odung.png" alt="week_item">
+                                </div>
+                                <div class="item_bucket">
+                                    <img src="../../img/go_bucket_icon.png" alt="go_to_bucket">
+                                </div>
+                            </div>
+                            <div class="word_area">
+                                <p>오둥이 아크릴 키링 1매</p>
+                                <div class="word_area_pr">
+                                    <strong>10,000</strong><span>원</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="item_box">
+                            <div class="item_area">
+                                <div class="item_image">
+                                    <img src="../../img/odung.png" alt="week_item">
+                                </div>
+                                <div class="item_bucket">
+                                    <img src="../../img/go_bucket_icon.png" alt="go_to_bucket">
+                                </div>
+                            </div>
+                            <div class="word_area">
+                                <p>오둥이 아크릴 키링 1매</p>
+                                <div class="word_area_pr">
+                                    <strong>10,000</strong><span>원</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="item_box">
+                            <div class="item_area">
+                                <div class="item_image">
+                                    <img src="../../img/odung.png" alt="week_item">
+                                </div>
+                                <div class="item_bucket">
+                                    <img src="../../img/go_bucket_icon.png" alt="go_to_bucket">
+                                </div>
+                            </div>
+                            <div class="word_area">
+                                <p>오둥이 아크릴 키링 1매</p>
+                                <div class="word_area_pr">
+                                    <strong>10,000</strong><span>원</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <%@ include file="../../include/footer.jsp" %>
+    </div>
+    <!-- <p class="to_top"><a href="#layout0" class="s_point">TOP</a></p> -->
+    </div>
+
+
+    </footer>
+    </div>
+
+</body>
+
+</html>
