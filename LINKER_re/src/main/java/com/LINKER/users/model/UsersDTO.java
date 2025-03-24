@@ -3,49 +3,49 @@ package com.LINKER.users.model;
 import java.sql.Timestamp;
 
 public class UsersDTO {
-	private int userId;
-	private String userName;
+	private int user_id;
+	private String user_name;
 	private String email;
 	private String password;
 	private String phone;
-	private Timestamp createdAt;
-	private String memCode;
-	private int cartId;
-	private int userPoint;
-	private String userAddress;
+	private Timestamp created_at;
+	private String mem_code;
+	private int cart_id;
+	private int user_point;
+	private String user_address;
 	
 	public UsersDTO() {
 	}
 
-	public UsersDTO(int userId, String userName, String email, String password, String phone, Timestamp createdAt,
-			String memCode, int cartId, int userPoint, String userAddress) {
+	public UsersDTO(int user_id, String user_name, String email, String password, String phone, Timestamp created_at,
+			String mem_code, int cart_id, int user_point, String user_address) {
 		super();
-		this.userId = userId;
-		this.userName = userName;
+		this.user_id = user_id;
+		this.user_name = user_name;
 		this.email = email;
 		this.password = password;
 		this.phone = phone;
-		this.createdAt = createdAt;
-		this.memCode = memCode;
-		this.cartId = cartId;
-		this.userPoint = userPoint;
-		this.userAddress = userAddress;
+		this.created_at = created_at;
+		this.mem_code = mem_code;
+		this.cart_id = cart_id;
+		this.user_point = user_point;
+		this.user_address = user_address;
 	}
 
-	public int getUserId() {
-		return userId;
+	public int getUser_id() {
+		return user_id;
 	}
 
-	public void setUserId(int userId) {
-		this.userId = userId;
+	public void setUser_id(int user_id) {
+		this.user_id = user_id;
 	}
 
-	public String getUserName() {
-		return userName;
+	public String getUser_name() {
+		return user_name;
 	}
 
-	public void setUserName(String userName) {
-		this.userName = userName;
+	public void setUser_name(String user_name) {
+		this.user_name = user_name;
 	}
 
 	public String getEmail() {
@@ -72,45 +72,47 @@ public class UsersDTO {
 		this.phone = phone;
 	}
 
-	public Timestamp getCreatedAt() {
-		return createdAt;
+	public Timestamp getCreated_at() {
+		return created_at;
 	}
 
-	public void setCreatedAt(Timestamp createdAt) {
-		this.createdAt = createdAt;
+	public void setCreated_at(Timestamp created_at) {
+		this.created_at = created_at;
 	}
 
-	public String getMemCode() {
-		return memCode;
+	public String getMem_code() {
+		return mem_code;
 	}
 
-	public void setMemCode(String memCode) {
-		this.memCode = memCode;
+	public void setMem_code(String mem_code) {
+		this.mem_code = mem_code;
 	}
 
-	public int getCartId() {
-		return cartId;
+	public int getCart_id() {
+		return cart_id;
 	}
 
-	public void setCartId(int cartId) {
-		this.cartId = cartId;
+	public void setCart_id(int cart_id) {
+		this.cart_id = cart_id;
 	}
 
-	public int getUserPoint() {
-		return userPoint;
+	public int getUser_point() {
+		return user_point;
 	}
 
-	public void setUserPoint(int userPoint) {
-		this.userPoint = userPoint;
+	public void setUser_point(int user_point) {
+		this.user_point = user_point;
 	}
 
-	public String getUserAddress() {
-		return userAddress;
+	public String getUser_address() {
+		return user_address;
 	}
 
-	public void setUserAddress(String userAddress) {
-		this.userAddress = userAddress;
+	public void setUser_address(String user_address) {
+		this.user_address = user_address;
 	}
+
+	
 	
 	
 	

@@ -1,3 +1,0 @@
-#Tomcat publish data
-#Sun Mar 23 19:38:26 KST 2025
-org.eclipse.jst.jee.server\:LINKER_re=C\:\\Users\\domai\\Desktop\\let_me_go\\apache-tomcat-9.0.100\\wtpwebapps\\LINKER_re

@@ -1,0 +1,170 @@
+package com.LINKER.users.service;
+
+import java.io.IOException;
+import java.io.PrintWriter;
+import java.util.HashMap;
+import java.util.Map;
+
+import javax.servlet.ServletException;
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
+
+import org.apache.ibatis.session.SqlSession;
+import org.apache.ibatis.session.SqlSessionFactory;
+
+import com.LINKER.mapper.UsersMapper;
+import com.LINKER.users.model.UsersDAO;
+import com.LINKER.users.model.UsersDTO;
+import com.LINKER.util.mybatis.MybatisUtil;
+
+public class UsersServiceImpl implements UsersService {
+
+	private SqlSessionFactory sqlSessionFactory = MybatisUtil.getSqlSessionFactory();
+	
+	@Override
+	public void join(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+
+		// 값을 받음
+		int user_id =  Integer.parseInt(request.getParameter("user_id"));
+		String user_name = request.getParameter("user_name");
+		String email = request.getParameter("email");
+		String password = request.getParameter("password");
+		String phone = request.getParameter("phone");
+		String created_at = request.getParameter("created_at");
+		String mem_code = request.getParameter("mem_code");
+		int cart_id = Integer.parseInt(request.getParameter("cart_id"));
+		int user_point = Integer.parseInt(request.getParameter("user_point"));
+		String user_address = request.getParameter("user_address");
+
+	}
+
+	@Override
+	public int addUser(UsersDTO userDto) {
+		SqlSession sql = sqlSessionFactory.openSession(true);
+		UsersMapper users = sql.getMapper(UsersMapper.class);
+		
+		return users.addUser(userDto);
+	}
+	
+	@Override
+	public int login(UsersDTO usersDto) throws ServletException, IOException {
+		SqlSession sql = sqlSessionFactory.openSession(true);
+		UsersMapper user = sql.getMapper(UsersMapper.class);
+		
+		return user.login(usersDto);
+	}
+
+//	@Override
+//	public void getUser(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+//	    String user_id = request.getParameter("user_id");
+//
+//	    if (user_id != null && !user_id.isEmpty()) {  // user_id가 null이나 빈 문자열이 아니면
+//	        try {
+//	            int user_id_int = Integer.parseInt(user_id);  // user_id를 int로 변환
+//
+//	            SqlSession sql = sqlSessionFactory.openSession(true);
+//	            UsersMapper userId = sql.getMapper(UsersMapper.class);
+//	            UsersDTO content = userId.getUser(user_id_int);  // DB에서 유저 정보 조회
+//	            sql.close();
+//
+//	            // request에 유저 정보 담기
+//	            request.setAttribute("content", content);
+//
+//	        } catch (NumberFormatException e) {
+//	            // user_id가 잘못된 형식일 경우
+//	            request.setAttribute("error", "유효하지 않은 user_id입니다.");
+//	             request.getRequestDispatcher("/errorPage.jsp").forward(request, response);
+//	        }
+//	    } else {
+//	        // user_id가 null이나 빈 값일 경우
+//	        request.setAttribute("error", "user_id가 제공되지 않았습니다.");
+//	        request.getRequestDispatcher("/errorPage.jsp").forward(request, response);
+//	    }
+//	}
+
+	
+	@Override
+	public void update(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+	    String user_name = request.getParameter("user_name");
+	    String password = request.getParameter("password");
+	    String phone = request.getParameter("phone");
+	    String user_address = request.getParameter("user_address");
+
+	    if (user_id != null && !user_id.isEmpty()) {  // user_id가 null이나 빈 문자열이 아니면
+	        try {
+	            // String을 int로 변환
+	            int user_id_int = Integer.parseInt(user_id);
+
+	            // 맵에 값을 추가
+	            Map<String, String> map = new HashMap<>();
+	            map.put("user_id", String.valueOf(user_id_int));  // user_id는 String으로 저장해야 하므로 String으로 변환
+	            map.put("user_name", user_name);
+	            map.put("password", password);
+	            map.put("phone", phone);
+	            map.put("user_address", user_address);
+
+	            SqlSession sql = sqlSessionFactory.openSession(true);
+	            UsersMapper mapper = sql.getMapper(UsersMapper.class);
+	            int result = mapper.update(map);
+	            sql.close();
+
+	            if (result == 1) {  // 업데이트 성공
+	                response.setContentType("text/html; charset=UTF-8;");
+	                PrintWriter out = response.getWriter();
+	                out.println("<script>");
+	                out.println("alert('수정 되었습니다');");
+	                out.println("location.href='getContent.users?user_id=" + user_id + "';");
+	                out.println("</script>");
+	            } else {  // 업데이트 실패
+	                response.sendRedirect("main.users");
+	            }
+
+	        } catch (NumberFormatException e) {
+	            // user_id가 잘못된 형식일 경우
+	            request.setAttribute("error", "유효하지 않은 user_id입니다.");
+	            request.getRequestDispatcher("/errorPage.jsp").forward(request, response);
+	        }
+	    } else {
+	        // user_id가 null이나 빈 값일 경우
+	        request.setAttribute("error", "user_id가 제공되지 않았습니다.");
+	        request.getRequestDispatcher("/errorPage.jsp").forward(request, response);
+	    }
+	}
+
+	@Override
+	public void delete(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+		/*
+		 * 1. delete from 테이블 명 where 키 = ?
+		 * 2. 이메일은 세션에 있습니다
+		 * 3. 이메일을 얻어서 dao에서 삭제를 진행하면 됩니다
+		 * 4. 삭제 성공시에는 세션을 삭제하고 메인페이지로 이동(메시지도 띄워주세요), 
+		 *    실패시에는 마이페이지로 이동 redirect
+		 */
+		HttpSession session = request.getSession();
+		UsersDTO dto = (UsersDTO)session.getAttribute("userDTO");
+		String email = dto.getEmail();
+		
+		UsersDAO dao = UsersDAO.getInstance();
+		int result = dao.delete(email);
+		
+		if(result == 1) {
+			
+			
+			//화면에 메시지를 보내는 또다른 방법(out 객체 사용)
+			response.setContentType("text/html; charset=UTF-8");
+			PrintWriter out = response.getWriter();
+			
+			out.println("<script>");
+			out.println("alert('정보가 삭제되었습니다');");
+			out.println("location.href='/LINKER/index.jsp';");
+			out.println("</script>");
+			session.removeAttribute("userDTO"); //세션 삭제
+//			session.invalidate();//모든 세션 삭제
+			
+		}else {
+			response.sendRedirect("/mypage.users");
+		}
+	}
+
+}

@@ -15,4 +15,5 @@ public interface UsersService {
 	void modify(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException;
 	void delete(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException;
 	public int addUser(UsersDTO usersDto);
+//	void getUser(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException;
 }

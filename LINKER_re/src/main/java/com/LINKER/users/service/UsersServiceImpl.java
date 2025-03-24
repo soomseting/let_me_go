@@ -2,6 +2,8 @@ package com.LINKER.users.service;
 
 import java.io.IOException;
 import java.io.PrintWriter;
+import java.util.HashMap;
+import java.util.Map;
 
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServletRequest;
@@ -19,12 +21,12 @@ import com.LINKER.util.mybatis.MybatisUtil;
 public class UsersServiceImpl implements UsersService {
 
 	private SqlSessionFactory sqlSessionFactory = MybatisUtil.getSqlSessionFactory();
-	
+
 	@Override
 	public void join(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 
 		// 값을 받음
-		int user_id =  Integer.parseInt(request.getParameter("user_id"));
+		int user_id = Integer.parseInt(request.getParameter("user_id"));
 		String user_name = request.getParameter("user_name");
 		String email = request.getParameter("email");
 		String password = request.getParameter("password");
@@ -34,38 +36,6 @@ public class UsersServiceImpl implements UsersService {
 		int cart_id = Integer.parseInt(request.getParameter("cart_id"));
 		int user_point = Integer.parseInt(request.getParameter("user_point"));
 		String user_address = request.getParameter("user_address");
-//		if (snsYn == null) {
-//			snsYn = "N";
-//		}
-//		String email = emailPrev + "@" + emailNext;
-
-//		System.out.println(emailPrev);
-//		System.out.println(emailNext);
-//		System.out.println(name);
-//		System.out.println(pw);
-//		System.out.println(phone);
-//		System.out.println(gender);
-//		System.out.println(snsYn);
-
-//		// DAO객체생성
-//		UsersDAO dao = UsersDAO.getInstance();
-//
-//		int result = dao.idDuplicationCheck(email);
-//
-//		if (result == 1) {
-//
-//			// msg를 화면에 보냄
-//			request.setAttribute("msg", "이미 존재하는 아이디입니다");
-//			request.getRequestDispatcher("join.jsp").forward(request, response);
-//
-//		} else {
-//			UsersDTO dto = new UsersDTO(email, name, pw, phone, gender, snsYn, null);
-//			dao.join(dto);
-//
-//			// mvc2방식에서 리다이렉트는 다시 컨트롤러를 태워서 이동할 때 사용함
-//			response.sendRedirect("login.users");
-//
-//		}
 
 	}
 
@@ -73,100 +43,142 @@ public class UsersServiceImpl implements UsersService {
 	public int addUser(UsersDTO userDto) {
 		SqlSession sql = sqlSessionFactory.openSession(true);
 		UsersMapper users = sql.getMapper(UsersMapper.class);
-		
+
 		return users.addUser(userDto);
 	}
-	
+
 	@Override
 	public int login(UsersDTO usersDto) throws ServletException, IOException {
 		SqlSession sql = sqlSessionFactory.openSession(true);
 		UsersMapper user = sql.getMapper(UsersMapper.class);
-		
+
 		return user.login(usersDto);
 	}
 
+//	@Override
+//	public void getUser(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+//	    String user_id = request.getParameter("user_id");
+//
+//	    if (user_id != null && !user_id.isEmpty()) {  // user_id가 null이나 빈 문자열이 아니면
+//	        try {
+//	            int user_id_int = Integer.parseInt(user_id);  // user_id를 int로 변환
+//
+//	            SqlSession sql = sqlSessionFactory.openSession(true);
+//	            UsersMapper userId = sql.getMapper(UsersMapper.class);
+//	            UsersDTO content = userId.getUser(user_id_int);  // DB에서 유저 정보 조회
+//	            sql.close();
+//
+//	            // request에 유저 정보 담기
+//	            request.setAttribute("content", content);
+//
+//	        } catch (NumberFormatException e) {
+//	            // user_id가 잘못된 형식일 경우
+//	            request.setAttribute("error", "유효하지 않은 user_id입니다.");
+//	             request.getRequestDispatcher("/errorPage.jsp").forward(request, response);
+//	        }
+//	    } else {
+//	        // user_id가 null이나 빈 값일 경우
+//	        request.setAttribute("error", "user_id가 제공되지 않았습니다.");
+//	        request.getRequestDispatcher("/errorPage.jsp").forward(request, response);
+//	    }
+//	}
+
 	@Override
 	public void modify(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		/*
-		 * update 테이블명 set 업데이트할 값 where pk = ?
-		 * 
-		 * 1. 화면에서 넘어온 값을 받습니다(이름, 성별, 휴대폰, 수신여부) 
-		 * 2. email값은 세션에서 얻습니다. 
-		 * 3. DAO는 modify() 메서드를 생성을하고 업데이트를 진행합니다. 
-		 * 4. DAO 성공 시 1을 반환하고, 실패 시 0을 반환합니다. 
-		 * 5. 서비스에서는 정보수정성공시에 메인페이지로 이동, 실패시에는 mypage로 이동
-		 */
+	    // 세션에서 userDTO를 가져옵니다
+	    HttpSession session = request.getSession();
+	    
+	    UsersDTO dto = (UsersDTO) session.getAttribute("userDTO");
 
-		String name = request.getParameter("user_name");
-		String gender = request.getParameter("gender");
-		String phone = request.getParameter("phone");
-		String snsYn = request.getParameter("sns_yn");
+	    // userDTO가 null인 경우 로그인 페이지로 리다이렉트
+//	    if (dto == null) {
+//	         // 메인 페이지로 이동
+//	        return;
+//	    }
 
-		HttpSession session = request.getSession();
-		UsersDTO dto = (UsersDTO)session.getAttribute("userDTO");
-		String email = dto.getEmail();
-		
-		//dao호출
-//		UsersDAO dao = UsersDAO.getInstance();
-//		int result= dao.modify(name, gender, phone, snsYn, email);
-//
-//		if (result == 0) {//fail  실패시 보낼 데이터는 없으니 redirect 써도 됨
-//			request.setAttribute("msg", "실패");
-//			request.getRequestDispatcher("mypage.jsp").forward(request, response);
-//		} else {//true
-//			//세션의 정보도 업데이트
-//			UsersDTO userDTO = new UsersDTO(email,name,null,phone,gender,snsYn,null);
-//			session.setAttribute("userDTO", dao);
-//			//-----------------------------------------------------------
-//			dto = dao.getInfo(email);
-//			session.setAttribute("userDTO", dto);
-////			response.sendRedirect("../index.jsp");
-//			//-----------------------------------------------------------
-//			//화면에 메시지를 보내는 또다른 방법(out 객체 사용)
-//			response.setContentType("text/html; charset=UTF-8");
-//			PrintWriter out = response.getWriter();
-//			
-//			out.println("<script>");
-//			out.println("alert('정보가 수정되었습니다');");
-//			out.println("location.href='/LINKER/index.jsp';");
-//			out.println("</script>");
-//			
-//		}
+	    String userName = request.getParameter("user_name");
+	    String password = request.getParameter("password");
+	    String phone = request.getParameter("phone");
+	    String userAddress = request.getParameter("user_address");
+
+	    System.out.println(userName);
+	    // 수정할 값을 Map에 담기
+	    Map<String, Object> params = new HashMap<>();
+	    params.put("user_name", userName);
+	    params.put("password", password);
+	    params.put("phone", phone);
+	    params.put("user_address", userAddress);
+	    params.put("email", dto.getEmail());  // dto에서 email 추출
+
+	    // SqlSession을 통해 마이바티스 매퍼 호출
+	    SqlSession sqlSession = sqlSessionFactory.openSession();
+	    try {
+	        UsersMapper mapper = sqlSession.getMapper(UsersMapper.class);
+
+	        // update 쿼리 실행
+	        int result = mapper.modify(params);
+
+	        if (result == 0) { // 수정 실패
+	            request.setAttribute("msg", "수정 실패");
+//	            request.getRequestDispatcher("/main.jsp").forward(request, response);
+	        } else { // 수정 성공
+	            // 세션 정보 업데이트
+	            dto.setUser_name(userName);
+	            dto.setPassword(password);
+	            dto.setPhone(phone);
+	            dto.setUser_address(userAddress);
+	            session.setAttribute("userDTO", dto);
+
+	            // 결과 메시지 전송
+	            response.setContentType("text/html; charset=UTF-8");
+	            PrintWriter out = response.getWriter();
+	            out.println("<script>");
+	            out.println("alert('정보가 수정되었습니다');");
+	            out.println("location.href='/LINKER/main/main.jsp';");
+	            out.println("</script>");
+	        }
+	    } finally {
+	        sqlSession.close();
+	    }
 	}
+
 
 	@Override
 	public void delete(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		/*
-		 * 1. delete from 테이블 명 where 키 = ?
-		 * 2. 이메일은 세션에 있습니다
-		 * 3. 이메일을 얻어서 dao에서 삭제를 진행하면 됩니다
-		 * 4. 삭제 성공시에는 세션을 삭제하고 메인페이지로 이동(메시지도 띄워주세요), 
-		 *    실패시에는 마이페이지로 이동 redirect
-		 */
-		HttpSession session = request.getSession();
-		UsersDTO dto = (UsersDTO)session.getAttribute("userDTO");
-		String email = dto.getEmail();
-		
-		UsersDAO dao = UsersDAO.getInstance();
-		int result = dao.delete(email);
-		
-		if(result == 1) {
-			
-			
-			//화면에 메시지를 보내는 또다른 방법(out 객체 사용)
-			response.setContentType("text/html; charset=UTF-8");
-			PrintWriter out = response.getWriter();
-			
-			out.println("<script>");
-			out.println("alert('정보가 삭제되었습니다');");
-			out.println("location.href='/LINKER/index.jsp';");
-			out.println("</script>");
-			session.removeAttribute("userDTO"); //세션 삭제
-//			session.invalidate();//모든 세션 삭제
-			
-		}else {
-			response.sendRedirect("/mypage.users");
-		}
+	    HttpSession session = request.getSession();
+	    UsersDTO dto = (UsersDTO) session.getAttribute("userDTO");
+
+	    // 이메일을 가져와서 삭제 요청을 보냄
+	    String email = dto.getEmail();
+
+	    // MyBatis 세션을 통해 매퍼 호출
+	    SqlSession sqlSession = sqlSessionFactory.openSession();
+	    try {
+	        UsersMapper mapper = sqlSession.getMapper(UsersMapper.class);
+
+	        // delete 쿼리 실행
+	        int result = mapper.delete(email);
+
+	        if (result == 1) {
+	            // 삭제 성공 시 세션을 지우고 메인 페이지로 리다이렉트
+	            response.setContentType("text/html; charset=UTF-8");
+	            PrintWriter out = response.getWriter();
+	            out.println("<script>");
+	            out.println("alert('정보가 삭제되었습니다');");
+	            out.println("location.href='/LINKER/main/main.jsp';");
+	            out.println("</script>");
+
+	            // 세션에서 사용자 정보 삭제
+	            session.removeAttribute("userDTO");
+	        } else {
+	            // 삭제 실패 시 마이페이지로 리다이렉트
+	            response.sendRedirect("/mypage.users");
+	        }
+	    } finally {
+	        sqlSession.close();
+	    }
 	}
+
+
 
 }

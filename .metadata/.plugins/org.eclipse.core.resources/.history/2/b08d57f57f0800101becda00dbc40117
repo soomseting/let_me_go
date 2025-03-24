@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" 
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<!-- 안에 들어가는 내용물은 mapper 태그 안에 작성 -->
+<!-- namespace에는 구현 인터페이스의 풀패키지명을 포함한 이름이 들어감 -->
+<mapper namespace="com.LINKER.mapper.UsersMapper">
+	<select id="login" parameterType="com.LINKER.users.model.UsersDTO" resultType="int">
+		SELECT COUNT(*) FROM USERS
+		WHERE EMAIL=#{email} AND PASSWORD=#{password}
+	</select>
+	<insert id="addUser" parameterType="com.LINKER.users.model.UsersDTO">
+		<!-- INSERT INTO USERS(USER_NAME, EMAIL,PASSWORD PHONE, ADDRESS, MEM_CODE)
+		VALUES (#{user_name},#{email},#{password},#{phone},#{address},#{mem_code}) -->
+		
+	<selectKey keyProperty="user_id" resultType="int" order="BEFORE"> SELECT NVL(MAX(USER_ID),0) + 1 FROM USERS </selectKey>
+	INSERT INTO USERS ( USER_ID , USER_NAME , EMAIL , PASSWORD , PHONE , CREATED_AT , MEM_CODE , CART_ID , USER_POINT , USER_ADDRESS ) 
+	VALUES ( #{user_id} , #{user_name} , #{email} , #{password} , #{phone} , SYSDATE , #{mem_code} , NULL , '1000000' , #{user_address} )
+	</insert>
+	<update id="modify" parameterType="map">
+	UPDATE USERS SET USER_NAME = #{user_name}, 
+					 PASSWORD = #{password}, 
+					 PHONE = #{phone}, 
+					 USER_ADDRESS = #{user_address} 
+					 WHERE EMAIL = #{email}
+	</update>
+	<delete id="delete">
+		DELETE FROM USERS WHERE EMAIL = #{email}
+	</delete>
+	
+	<select id="getUser">
+		SELECT * FROM USERS WHERE EMAIL = #{email}
+	</select>
+</mapper>

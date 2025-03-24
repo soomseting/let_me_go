@@ -1,0 +1,64 @@
+<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>정보수정</title>
+    <link rel="stylesheet" href="../../css/sign_up.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="../../js/jquery-3.7.1.js"></script>
+    <script src="../../js/script.js"></script>
+</head>
+
+<body>
+    <section>
+        <div class="sign_up_logo">
+            <img src="../../img/logo.png" alt="logo">
+        </div>
+        <div class="sign_up_content">
+            <div class="su_title">
+                <h1>정보수정</h1>
+            </div>
+            <form action="/LINKER/modifyOrDelete.users" method="post" name="action_form">
+                <div class="su_con_wrap">
+                    <div class="su_con_box">
+                        <div class="su_ct">이름<span> *</span></div>
+                        <div class="su_input"><input type="text" name="user_name" placeholder="이름을 입력해 주세요." required></div>
+                    </div>
+                    <div class="su_con_box">
+                        <div class="su_ct">비밀번호<span> *</span></div>
+                        <div class="su_input"><input type="password" name="password" placeholder="비밀번호를 입력해 주세요. (8자리 이상)" required></div>
+                        <div class="su_input"><input type="password" name="password_confirm" placeholder="비밀번호를 한번 더 입력해주세요." required></div>
+                    </div>
+                    <div class="su_con_box su_con_one">
+                        <div class="su_ct">연락처<span> *</span></div>
+                        <div class="su_input"><input type="text" name="phone" placeholder="연락처를 입력해 주세요." required></div>
+                    </div>
+                    <div class="su_con_box su_con_thr">
+                        <div class="su_ct">주소<span> *</span></div>
+                        <div class="su_input"><input type="text" name="user_address" placeholder="주소를 입력해 주세요." required></div>
+                    </div>
+                    <div class="su_con_box su_con_for">
+                        <!-- 수정하기 버튼 -->
+                        <div class="su_input sui1"><button type="button" id="update" onclick="some()" >수정하기</button></div>
+                        <!-- 탈퇴하기 버튼 -->
+                        <div class="su_input sui2"><button type="button" id="delete" onclick="some()" >탈퇴하기</button></div>
+                    </div>
+                    <!-- button변경 후 js로 action 각각 설정 controller에서 각각 설정 -->
+                </div>
+            </form>
+        </div>
+    </section>
+    <script type="text/javascript">
+	function some(){
+		if(event.target.id==="update"){
+			document.action_form.action="/LINKER/modify.users"
+		}
+	}
+</script>
+</body>
+
+
+</html>

@@ -1,0 +1,39 @@
+package com.LINKER.users.model;
+
+import java.sql.Timestamp;
+
+public class UsersDTO {
+	private int user_id;
+	private String user_name;
+	private String email;
+	private String password;
+	private String phone;
+	private Timestamp created_at;
+	private String mem_code;
+	private int cart_id;
+	private int user_point;
+	private String user_address;
+	
+	public UsersDTO() {
+	}
+
+	public UsersDTO(int user_id, String user_name, String email, String password, String phone, Timestamp created_at,
+			String mem_code, int cart_id, int user_point, String user_address) {
+		super();
+		this.user_id = user_id;
+		this.user_name = user_name;
+		this.email = email;
+		this.password = password;
+		this.phone = phone;
+		this.created_at = created_at;
+		this.mem_code = mem_code;
+		this.cart_id = cart_id;
+		this.user_point = user_point;
+		this.user_address = user_address;
+	}
+
+	
+	
+	
+	
+}
